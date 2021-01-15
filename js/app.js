@@ -1,38 +1,4 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
-
-/**
- * Define Global Variables
- * 
-*/
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
 /**creates the anchors */
-
 let h2List = document.getElementsByTagName("h2")
 for(let n = 0; n< h2List.length; n++){
     let textContent = h2List[n].textContent;
@@ -49,8 +15,6 @@ for(let n = 0; n < sectionList.length; n++){
     liList[n].setAttribute("id","sec" +(n+1));
     liList[n].setAttribute("class","nav-section");
 }
-
-
 
 // Add class 'active' to section when near top of viewport
 let secList = document.getElementsByTagName("section")
@@ -84,48 +48,24 @@ for(let n = 0; n < anchorList.length; n++){
 let footer = document.querySelector("footer")
 let backTop = footer.insertAdjacentHTML("beforebegin", "<a id=\"button\">Scroll to Top</a>")
 let button = document.querySelector("#button")
-
 button.addEventListener("click", function(){
-    console.log("i am click");
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     })
 })
 
-
-
-
-
 //Hide navbar 
-
-
-function timeOut(){setTimeout(function(){
-    let navbarList = document.querySelectorAll(".navbar__menu") 
-    for(let n = 0; n < navbarList.length; n++){
-        navbarList[n].style.display = "none";
-    }
-}, 10000);}
+let timer;
+function timeOut(){
+    timer = setTimeout(function(){
+    let navbarList = document.querySelector("#navbox") 
+        navbarList.style.display = "none";
+}, 3000);}
 
 window.addEventListener("mousemove", function(){
-    clearTimeout(timeOut);
-    let navbarList = document.querySelectorAll(".navbar__menu")
-    for(let n = 0; n < navbarList.length; n++){
-        navbarList[n].style.display = "flex";
-    }
+    let navbarList = document.querySelector("#navbox")
+    navbarList.style.display = "flex";
+    clearTimeout(timer);
     timeOut();
 })
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-
