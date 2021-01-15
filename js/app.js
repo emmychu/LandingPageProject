@@ -1,4 +1,5 @@
 /**creates the anchors */
+
 let h2List = document.getElementsByTagName("h2")
 for(let n = 0; n< h2List.length; n++){
     let textContent = h2List[n].textContent;
@@ -22,8 +23,9 @@ window.addEventListener("scroll", function(){
     for(let n = 0; n < secList.length; n++){
         let element = secList[n];
         let position = element.getBoundingClientRect();
-        if(position.top >= (0 - document.getElementById("navbox").getBoundingClientRect().height) && position.bottom <= window.innerHeight){
-            element.setAttribute("class","your-active-class");
+        let navbarHeight = document.getElementById("navbox").getBoundingClientRect().height
+        if((position.top - navbarHeight <= 0) && position.bottom <= window.innerHeight && (position.bottom - navbarHeight >= 0)){
+            element.setAttribute("class","active-class");
         }
         else{
             element.removeAttribute("class");
