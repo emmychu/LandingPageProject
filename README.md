@@ -1,7 +1,4 @@
-This is the landing page with updated interactivity!
-Although a majority of the css remains, I have added:
-1. Navigation bar interactivity via javascript
-    a) The navigation bar auto-hides after 5 seconds
-    b) Upon clicking the section number it should automatically scroll to the destination
-2. An anchor element that scrolls to the top via javascript
-3. When each section is fully displayed on the page, the class should change to active and the preset css should appear for each active section.
+# Udacity Landing Page
+
+## Description
+This is a Landing Page Project to display interactivty while scrolling. The navigation bar will auto-hide after 5 seconds and clicking upon section numbers should smoothly scroll to the designated section. When fully displayed the sections will become active.
